@@ -43,12 +43,15 @@
         "johnpbloch/wordpress"                        : "*",
         "ibmjstart/wp-bluemix-objectstorage"          : "~2.1.1",
         "ibmjstart/wp-bluemix-config"                 : "dev-master",
+        "wpackagist-plugin/h5p"                       : "*",
         "wpackagist-plugin/stops-core-theme-and-plugin-updates": "*",
         "wpackagist-plugin/sendgrid-email-delivery-simplified": "*",
         "wpackagist-plugin/wp-super-cache"            : "*",
         "wpackagist-theme/twentyfourteen"             : "*",
-        "wpackagist-theme/twentyfifteen"             : "*",
-        "wpackagist-theme/twentysixteen"               : "*"
+        "wpackagist-theme/twentyfifteen"              : "*",
+        "wpackagist-theme/twentysixteen"              : "*",
+        "wpackagist-theme/tribes"                     : "*",
+        "wpackagist-theme/simpleshift"                : "*"
     },
 
     "extra": {
