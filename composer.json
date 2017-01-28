@@ -51,7 +51,8 @@
         "wpackagist-theme/twentyfifteen"              : "*",
         "wpackagist-theme/twentysixteen"              : "*",
         "wpackagist-theme/tribes"                     : "*",
-        "wpackagist-theme/simpleshift"                : "*"
+        "wpackagist-theme/simpleshift"                : "*",
+        "wpackagist-plugin/simpleshift-companion"     : "*"
     },
 
     "extra": {
