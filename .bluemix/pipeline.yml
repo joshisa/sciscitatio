@@ -106,16 +106,7 @@ stages:
           t=$[$t+1]
           sleep 15
         done
-        while :
-        do
-          status=$(cf s | grep myObjectStorage | awk -F" " '{print $5, $6}')
-          if [[ "$status" == *"succeeded"* ]]
-          then
-            break
-          fi
-        done
       fi
-      sleep 3m
   - name: DeliverPresent
     type: deployer
     target:
