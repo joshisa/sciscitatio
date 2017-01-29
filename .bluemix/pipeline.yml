@@ -102,7 +102,21 @@ stages:
         t=0
         until [ $t -ge 5 ]
         do
-          cf create-service Object-Storage standard myObjectStorage > /dev/null 2>&1 && break
+          create=$(cf create-service Object-Storage standard myObjectStorage | grep "already exists")
+          if [[ "$create" == *"already exists"* ]]
+          then
+            break
+          else
+            while :
+            do
+              status=$(cf s | grep myObjectStorage)
+              if [[ "$status" == *"succeeded"* ]]
+              then
+                break
+              fi
+            done
+            sleep 3m
+          fi
           t=$[$t+1]
           sleep 15
         done
