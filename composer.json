@@ -29,7 +29,7 @@
             "mv vendor htdocs/vendor",
             "mv lib/.htaccess htdocs",
             "mv lib/advanced-cache.php htdocs/wp-content",
-            "mkdir -p htdocs/wp-content/uploads/h5p && mv lib/h5p htdocs/wp-content/uploads/h5p"
+            "mkdir -p htdocs/wp-content/uploads/h5p && mv lib/h5p/libraries htdocs/wp-content/uploads/h5p"
         ],
         "post-update-cmd" : [
             "mv vendor/ibmjstart/wp-bluemix-config/mu-plugins htdocs/wp-content/mu-plugins",
@@ -38,7 +38,7 @@
             "mv vendor htdocs/vendor",
             "mv lib/.htaccess htdocs",
             "mv lib/advanced-cache.php htdocs/wp-content",
-            "mkdir -p htdocs/wp-content/uploads/h5p && mv lib/h5p htdocs/wp-content/uploads/h5p"
+            "mkdir -p htdocs/wp-content/uploads/h5p && mv lib/h5p/libraries htdocs/wp-content/uploads/h5p"
         ]
     },
 
