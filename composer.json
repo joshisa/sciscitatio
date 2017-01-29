@@ -27,14 +27,18 @@
             "mv vendor/ibmjstart/wp-bluemix-config/.user.ini htdocs",
             "mv vendor/ibmjstart/wp-bluemix-config/wp-config.php htdocs",
             "mv vendor htdocs/vendor",
-            "mv lib/.htaccess htdocs"
+            "mv lib/.htaccess htdocs",
+            "mv lib/advanced-cache.php htdocs/wp-content",
+            "mv lib/h5p htdocs/wp-content/uploads"
         ],
         "post-update-cmd" : [
             "mv vendor/ibmjstart/wp-bluemix-config/mu-plugins htdocs/wp-content/mu-plugins",
             "mv vendor/ibmjstart/wp-bluemix-config/.user.ini htdocs",
             "mv vendor/ibmjstart/wp-bluemix-config/wp-config.php htdocs",
             "mv vendor htdocs/vendor",
-            "mv lib/.htaccess htdocs"
+            "mv lib/.htaccess htdocs",
+            "mv lib/advanced-cache.php htdocs/wp-content",
+            "mv lib/h5p htdocs/wp-content/uploads"
         ]
     },
 
