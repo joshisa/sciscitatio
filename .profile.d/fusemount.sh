@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -ex
 ##########
 # Colors - Lets have some fun ##
 ##########
@@ -93,6 +93,10 @@ else
   echo -e "${delivery}${Yellow}  No SSHFS Environment Variables detected. Proceeding with local ephemeral wp-content folder."
 fi
 
+function finish {
+  echo -e "Complete!"
+}
+trap finish EXIT
 # Reference Commands
 # How to generate a key-pair with no passphrase in a single command
 # ssh-keygen -b 2048 -t rsa -f /home/vcap/app/.profile.d/sshkey -q -N ""
