@@ -59,6 +59,7 @@ if [ -n "${SSHFS_HOST+set}" ]; then
     ls -al /home/vcap/misc
     echo -e "${delivery}${Yellow}  Creating wp-content folder within mounted Domain Namespace ..."
     mkdir -p /home/vcap/misc/${SSHFS_NAMESPACE}/wp-content
+    ls -al /home/vcap/misc/${SSHFS_NAMESPACE}
     # Note:  Rename of existing assembled wp-content folder must always precede the Symlink creation
     echo -e "${delivery}${Yellow}  Temporarily renaming wp-content folder ..."
     mv /home/vcap/app/htdocs/wp-content /home/vcap/app/htdocs/mirage
@@ -77,7 +78,6 @@ if [ -n "${SSHFS_HOST+set}" ]; then
       echo -e "${beer}${Cyan}    Existing index.php file detected.  Skipping transfer of wp-content folder."
     else
       echo -e "${harpoons}${Yellow}    Moving previous wp-content folder content onto SSHFS mount (Overwrite enabled).  Estimated time: > 3 mins ..."
-      ls -al /home/vcap/app/htdocs
       tar -C /home/vcap/app/htdocs/mirage -zcf - ./ | ssh -i /home/vcap/app/.profile.d/id_rsa -o UserKnownHostsFile=/home/vcap/app/.profile.d/known_hosts ${SSHFS_USER}@${SSHFS_HOST} "tar -C/home/paramount/${SSHFS_NAMESPACE}/wp-content -ozxf -"
       echo -e "${eyes}${Cyan}  Changing ownership of files folder to match apache web user [vcap] ..."
       chown -R vcap /home/vcap/misc/${SSHFS_NAMESPACE}/wp-content
