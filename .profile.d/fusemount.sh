@@ -78,7 +78,7 @@ if [ -n "${SSHFS_HOST+set}" ]; then
     else
       echo -e "${harpoons}${Yellow}    Moving previous wp-content folder content onto SSHFS mount (Overwrite enabled).  Estimated time: > 3 mins ..."
       ls -al /home/vcap/app/htdocs
-      tar -C /home/vcap/app/htdocs/mirage -jcf - ./ | ssh -i /home/vcap/app/.profile.d/id_rsa -o UserKnownHostsFile=/home/vcap/app/.profile.d/known_hosts ${SSHFS_USER}@${SSHFS_HOST} "tar -C/home/paramount/${SSHFS_NAMESPACE}/wp-content -jxf -"
+      tar -C /home/vcap/app/htdocs/mirage -zcf - ./ | ssh -i /home/vcap/app/.profile.d/id_rsa -o UserKnownHostsFile=/home/vcap/app/.profile.d/known_hosts ${SSHFS_USER}@${SSHFS_HOST} "tar -C/home/paramount/${SSHFS_NAMESPACE}/wp-content -ozxf -"
       echo -e "${eyes}${Cyan}  Changing ownership of files folder to match apache web user [vcap] ..."
       chown -R vcap /home/vcap/misc/${SSHFS_NAMESPACE}/wp-content
       chmod -R 0700 /home/vcap/misc/${SSHFS_NAMESPACE}/wp-content
