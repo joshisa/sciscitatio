@@ -47,7 +47,7 @@ if [ -n "${SSHFS_HOST+set}" ]; then
   if [ -n "${SSHFS_USER+set}" ] && [ -n "${SSHFS_DIR+set}" ]; then
     # Reference: http://manpages.ubuntu.com/manpages/karmic/en/man1/sshfs.1.html
     # SSHFS Tuning Reference: http://www.admin-magazine.com/HPC/Articles/Sharing-Data-with-SSHFS
-    sshfs ${SSHFS_USER}@${SSHFS_HOST}:${SSHFS_DIR} /home/vcap/misc -o IdentityFile=/home/vcap/app/.profile.d/id_rsa,StrictHostKeyChecking=yes,UserKnownHostsFile=/home/vcap/app/.profile.d/known_hosts,idmap=user,compression=yes,cache=yes,kernel_cache,large_read,Ciphers=arcfour,cache_timeout=115200,attr_timeout=115200
+    sshfs ${SSHFS_USER}@${SSHFS_HOST}:${SSHFS_DIR} /home/vcap/misc -o sshfs_debug -o debug -o LogLevel=DEBUG3 -o IdentityFile=/home/vcap/app/.profile.d/id_rsa, StrictHostKeyChecking=yes, UserKnownHostsFile=/home/vcap/app/.profile.d/known_hosts, idmap=user, compression=yes, cache=yes, kernel_cache, large_read, Ciphers=arcfour, cache_timeout=115200, attr_timeout=115200
   else
     echo -e "${fail}${Red}    SSHFS Mount failed!"
     echo -e "${fail}${Red}    User-provided Env Var SSHFS_USER AND/OR SSHFS_DIR not set!"
