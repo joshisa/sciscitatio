@@ -15,3 +15,5 @@ applications:
   services:
   - myObjectStorage
   - myComposeMySQL
+  env:
+    CF_STARTUP_TIMEOUT: 5
