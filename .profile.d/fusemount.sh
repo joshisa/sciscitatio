@@ -83,8 +83,11 @@ if [ -n "${SSHFS_HOST+set}" ]; then
       chown -R vcap /home/vcap/misc/${SSHFS_NAMESPACE}/wp-content
       chmod -R 0700 /home/vcap/misc/${SSHFS_NAMESPACE}/wp-content
     fi
+    if [ -f "/home/vcap/app/htdocs/wp-content/index.php" ]; then
+      echo -e "${beer}${Cyan}    Existing index.php file detected within linked folder"
+    fi
     echo -e "${litter}${Yellow}  Removing legacy wp-content folder"
-    rm -rf /home/vcap/app/htdocs/wp-content/mirage
+    rm -rf /home/vcap/app/htdocs/mirage
   else
     echo -e "${fail}${Red}    Symlink creation failed!"
     echo -e "${fail}${Red}    Env Var SSHFS_NAMESPACE not set!"
